@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FWI Prediction</title>
+</head>
+<body>
+    <h2>Predict Fire Weather Index (FWI)</h2>
+    <form method="POST">
+        <label for="temp">Temperature (°C):</label>
+        <input type="text" name="temp" required><br><br>
+
+        <label for="rh">Relative Humidity (%):</label>
+        <input type="text" name="rh" required><br><br>
+
+        <label for="ws">Wind Speed (km/h):</label>
+        <input type="text" name="ws" required><br><br>
+
+        <label for="rain">Rain (mm):</label>
+        <input type="text" name="rain" required><br><br>
+
+        <input type="submit" value="Predict FWI">
+    </form>
+
+    {% if prediction is not none %}
+        <h3>Predicted FWI: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
